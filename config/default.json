@@ -1,0 +1,69 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "bf9ca1ef0eab112e81a5c4feb1d72896e5801bbc68dc31660cee83028c463dc1420e13721f1555ecb9db173761b7cb96f4ba08a7f10b60e1447e5c5c130d283a8095f624d25fff7cb252541d1bc8dfab9d26b8ec3e038af59b6f33fe3fbcc8cede4ddf3171a3945b768618da66e97cc698b9ac88f33f8f8010ba3ca8956ca33168386ed36ad5db189e7473fe26bccde5dc23dc40d99c497ab369ebebe1a845d6b1a1af283c6fb49977d227075d1c51b598529e8ec0dba4a615cb04fb0fe6e9021fdadc00505e4cc131c7a068715196197c05f99783e4edf3c539cd809982553a8776435e9f89b1090a806a4b6bb4e4a45ec7e6424a9acf9de23e380ffd1e3ed7",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "base/users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "successRedirect": "/",
+      "scope": [
+        "profile openid email"
+      ]
+    },
+    "facebook": {
+      "clientID": "your facebook client id",
+      "clientSecret": "your facebook client secret",
+      "successRedirect": "/",
+      "scope": [
+        "public_profile",
+        "email"
+      ],
+      "profileFields": [
+        "id",
+        "displayName",
+        "first_name",
+        "last_name",
+        "email",
+        "gender",
+        "profileUrl",
+        "birthday",
+        "picture",
+        "permissions"
+      ]
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/feathers_boilerplate"
+}

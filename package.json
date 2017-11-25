@@ -1,0 +1,59 @@
+{
+  "name": "feathers-boilerplate",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Russian Rebouças",
+    "email": "russian.reboucas@gmail.com"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/"
+  },
+  "engines": {
+    "node": "^7.0.0",
+    "yarn": ">= 0.18.0"
+  },
+  "scripts": {
+    "test": "yarn run eslint && yarn run mocha",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "start": "node src/",
+    "mocha": "mocha test/ --recursive --exit",
+    "watch": "nodemon src/"
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^2.0.1",
+    "@feathersjs/authentication-jwt": "^1.0.1",
+    "@feathersjs/authentication-local": "^1.0.1",
+    "@feathersjs/authentication-oauth2": "^1.0.1",
+    "@feathersjs/configuration": "^1.0.1",
+    "@feathersjs/errors": "^3.2.0",
+    "@feathersjs/express": "^1.1.2",
+    "@feathersjs/feathers": "^3.0.1",
+    "@feathersjs/socketio": "^3.0.1",
+    "feathers-hooks-common": "git://github.com/feathers-plus/feathers-hooks-common.git#master",
+    "compression": "^1.7.1",
+    "cors": "^2.8.4",
+    "enum": "^2.5.0",
+    "feathers-mongoose": "^5.1.2",
+    "helmet": "^3.9.0",
+    "mongoose": "^4.13.5",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth20": "^1.0.0",
+    "serve-favicon": "^2.4.5",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "mocha": "^4.0.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
