@@ -13,7 +13,6 @@ module.exports = function(app) {
   app.on('login', function(user, { connection }) {
     // connection can be undefined if there is no
     // real-time connection, e.g. when logging in via REST
-    console.log('connection', connection);
     if(connection) {
       // The connection is no longer anonymous, remove it
       app.channel('anonymous').leave(connection);
